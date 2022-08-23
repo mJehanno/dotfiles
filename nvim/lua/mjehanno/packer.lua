@@ -5,14 +5,18 @@ return require("packer").startup(function(use)
 
 -- themes
 	use 'luisiacc/gruvbox-baby'
-	use 'zanglg/nova.vim'
 	use 'kyazdani42/nvim-web-devicons'	
-	use 'drewtempelmeyer/palenight.vim'
-	use 'NLKNguyen/papercolor-theme'
 	use 'KabbAmine/yowish.vim'
 
 	-- ui
-	use 'preservim/nerdtree'
+use {
+  'gelguy/wilder.nvim',
+  config = function()
+    -- config goes here
+  end,
+}
+use 'folke/todo-comments.nvim'
+use 'preservim/nerdtree'
 	use 'ryanoasis/vim-devicons'
 	use {
   'romgrk/barbar.nvim',
@@ -23,6 +27,7 @@ return require("packer").startup(function(use)
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
+use 'mhinz/vim-startify'
 	
 	-- languages 
 	

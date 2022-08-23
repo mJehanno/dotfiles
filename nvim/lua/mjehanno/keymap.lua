@@ -1,21 +1,12 @@
-local M = {}
+vim.keymap.set("n","<C-n>t", "<cmd>NERDTreeToggle<cr>")
+vim.keymap.set("n","<space>ff","<cmd>Telescope find_files<cr>")
+vim.keymap.set("n","<space>lg","<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n","<space>gss", function ()
+  local s = vim.fn.input("search pattern to grep on ? \n")
+  require("telescope.builtin").grep_string({ search = s})
+end)
 
-local function bind(op, outer_opts)
-    outer_opts = outer_opts or {noremap = true}
-    return function(lhs, rhs, opts)
-        opts = vim.tbl_extend("force",
-            outer_opts,
-            opts or {}
-        )
-        vim.keymap.set(op, lhs, rhs, opts)
-    end
-end
-
-M.nnoremap= bind("Down")
-M.nnoremap= bind("Left")
-M.nnoremap= bind("Right")
-M.nnoremap= bind("Up")
-
---M.nnoremap = bind("F7", :call vimterm#toggle())
-
-return M
+vim.keymap.set({"n","i"},"<Down>", "<Nop>")
+vim.keymap.set({"n","i"},"<Up>", "<Nop>")
+vim.keymap.set({"n","i"},"<Left>", "<Nop>")
+vim.keymap.set({"n","i"},"<Right>", "<Nop>")
