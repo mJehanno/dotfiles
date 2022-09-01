@@ -1,14 +1,16 @@
 return require("packer").startup(function(use)
 	-- tools
-	use 'wbthomason/packer.nvim'
-	use { "williamboman/mason.nvim" }
+use 'wbthomason/packer.nvim'
+use { "williamboman/mason.nvim" }
+use {'stevearc/dressing.nvim'}
 
 -- themes
-	use 'luisiacc/gruvbox-baby'
-	use 'kyazdani42/nvim-web-devicons'	
-	use 'KabbAmine/yowish.vim'
+use 'luisiacc/gruvbox-baby'
+use 'kyazdani42/nvim-web-devicons'
+use 'KabbAmine/yowish.vim'
 
-	-- ui
+-- ui
+use "tveskag/nvim-blame-line"
 use {
   'gelguy/wilder.nvim',
   config = function()
@@ -17,54 +19,65 @@ use {
 }
 use 'folke/todo-comments.nvim'
 use 'preservim/nerdtree'
-	use 'ryanoasis/vim-devicons'
-	use {
+use 'ryanoasis/vim-devicons'
+use {
   'romgrk/barbar.nvim',
   requires = {'kyazdani42/nvim-web-devicons'}
 }
-	use 'wvffle/vimterm'
-	use {
+use 'wvffle/vimterm'
+use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 use 'mhinz/vim-startify'
-	
-	-- languages 
-	
-	use 'fatih/vim-go'
+use {
+  'romgrk/searchbox.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+}
+use {"ellisonleao/glow.nvim"}
 
-	-- cmp
-	use 'L3MON4D3/LuaSnip'
-  use("hrsh7th/cmp-buffer")
- 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+-- languages 
+use 'fatih/vim-go'
+use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
-	-- lsp
-	use 'neovim/nvim-lspconfig'
-	use("onsails/lspkind-nvim")
-	use 'williamboman/nvim-lsp-installer'
+-- cmp
+use 'L3MON4D3/LuaSnip'
+use("hrsh7th/cmp-buffer")
+use("hrsh7th/nvim-cmp")
+use("hrsh7th/cmp-nvim-lsp")
+use("hrsh7th/cmp-path")
+use("hrsh7th/cmp-cmdline")
+use("saadparwaiz1/cmp_luasnip")
+
+-- lsp
+use 'neovim/nvim-lspconfig'
+use("onsails/lspkind-nvim")
+use 'williamboman/nvim-lsp-installer'
 
 
-	use("nvim-treesitter/nvim-treesitter", {
+use("nvim-treesitter/nvim-treesitter", {
         	run = ":TSUpdate"
     	})
- 	use("romgrk/nvim-treesitter-context")
-	
-	use("sbdchd/neoformat")
-	use 'sheerun/vim-polyglot'
+use("romgrk/nvim-treesitter-context")
 
-	--File browsing
-	use 'nvim-telescope/telescope-file-browser.nvim'
+use("sbdchd/neoformat")
+use 'sheerun/vim-polyglot'
 
-	--Telescope Requirements
-	use 'nvim-lua/popup.nvim'
-	use 'nvim-lua/plenary.nvim'
-	use 'nvim-telescope/telescope.nvim'
-	
+-- sessions
+use('Shatur/neovim-session-manager')
+
+--File browsing
+use 'nvim-telescope/telescope-file-browser.nvim'
+
+--Telescope Requirements
+use 'nvim-lua/popup.nvim'
+use 'nvim-lua/plenary.nvim'
+use 'nvim-telescope/telescope.nvim'
+
 	--Telescope
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 end)
+
