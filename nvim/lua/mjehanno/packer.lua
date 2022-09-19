@@ -4,12 +4,22 @@ use 'wbthomason/packer.nvim'
 use { "williamboman/mason.nvim" }
 use {'stevearc/dressing.nvim'}
 
+-- Git
+use("TimUntersberger/neogit")
+use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 -- themes
-use 'luisiacc/gruvbox-baby'
+--use 'luisiacc/gruvbox-baby'
 use 'kyazdani42/nvim-web-devicons'
 use 'KabbAmine/yowish.vim'
+use { "catppuccin/nvim", as = "catppuccin" }
 
 -- ui
+use {'~/Documents/Projects/plugins/indent-rainbow.nvim', as = "indent-rainbow"}
+use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup()
+end}
+use 'sunjon/shade.nvim'
 use "tveskag/nvim-blame-line"
 use {
   'gelguy/wilder.nvim',
@@ -60,13 +70,14 @@ use 'williamboman/nvim-lsp-installer'
 use("nvim-treesitter/nvim-treesitter", {
         	run = ":TSUpdate"
     	})
+use("nvim-treesitter/playground")
 use("romgrk/nvim-treesitter-context")
 
 use("sbdchd/neoformat")
 use 'sheerun/vim-polyglot'
 
 -- sessions
-use('Shatur/neovim-session-manager')
+--use('Shatur/neovim-session-manager')
 
 --File browsing
 use 'nvim-telescope/telescope-file-browser.nvim'
@@ -76,8 +87,12 @@ use 'nvim-lua/popup.nvim'
 use 'nvim-lua/plenary.nvim'
 use 'nvim-telescope/telescope.nvim'
 
-	--Telescope
+--Telescope
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use "ptethng/telescope-makefile"
 
+-- dev
+use "folke/lua-dev.nvim"
 end)
+
 
