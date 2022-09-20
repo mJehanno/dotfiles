@@ -1,7 +1,7 @@
 -- vim personnal flavor
 vim.cmd [[
   set termguicolors
-  colorscheme yowish
+  colorscheme catppucin
   set background=dark
   ]]
 
