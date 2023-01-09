@@ -117,7 +117,7 @@ require('lspconfig').rls.setup{
 -- Flutter LSP
 require("flutter-tools").setup{} -- use defaults
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
