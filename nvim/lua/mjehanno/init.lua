@@ -1,5 +1,5 @@
-require("mjehanno.cmp")
 require("mjehanno.packer")
+require("mjehanno.cmp")
 require("mjehanno.mason")
 require("mjehanno.lualine")
 require("mjehanno.telescope")
